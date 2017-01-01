@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great+Vibes:400">
+  <link rel="stylesheet" href="css/custom.css"></script>
+  <meta property="og:url"           content="http://www.chicklitgenerator.com/" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Chick Lit Generator" />
+  <meta property="og:description"   content="Randomly generated chick lit plot summaries" />
+  <meta property="og:image"         content="http://www.chicklitgenerator.com/images/book.png" />
+
+</head>
+<body class="bg-warning">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+
+http://stackoverflow.com/questions/5448545/how-to-retrieve-get-parameters-from-javascript
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    var items = location.search.substr(1).split("&");
+    for (var index = 0; index < items.length; index++) {
+        tmp = items[index].split("=");
+        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+    }
+    return result;
+}
+
+//http://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//http://stackoverflow.com/questions/5086390/jquery-titlecase
+function toTitleCase(str) {
+    return str.replace(/(?:^|\s)\w/g, function(match) {
+        return match.toUpperCase();
+    });
+}
+
+function onPageLoad(){
+
+var HeroineFirstNameArray=["Catherine","Megan","Olivia","Melanie","Rosie","Sophie","Gemma","Holly"];
+var HeroineLastNameArray=["Anderson","Merrivale","Smith","Young","Simpson","Strong","Goodman","Bright"];
+var HeroineJobArray=["Marketing assistant","Call centre manager","Estate agent","Insurance broker",
+                     "Financial adviser","Receptionist","Bank teller","Admin assistant"];
+var EvilBoyfriendArray=["Gerald","Nigel","Roger","Dean","Trevor","Gordon","Lionel","Darren"];
+var EvilBoyfriendJobArray=["accountant","tax inspector","leisure centre manager","boss","banker","stockbroker","IT consultant","lawyer"];
+var PlayingItSafeArray=["nursing a broken heart","mourning her beloved mother","looking after her dying aunt","caring for her disabled sister","bringing up her orphaned brother","paying off her university fees","juggling her credit card bills","studying accountancy at night school"];
+var WhenSuddenlyArray=["an unexpected legacy","the loss of her job","a crippling anxiety attack","a enigmatic stranger","a delayed train","a chance encounter in a London street","a devastating phone call","a letter she never meant to send"];
+var CouldSheReallyOpenArray=["sweet shop","cake shop","book store","vegan café",
+                             "juice bar","delicatessan","choclatier","bakery"];
+
+var RealManOccupationArray=["biker","farmer","fisherman","fireman","policeman","mountaineer","aid worker","mountain rescuer"];
+var HeroFirstNameArray=["Michael","Gabriel","Ethan","Sean","Liam","John","Ryan","Brandon"];
+var HeroLastNameArray=["O'Toole","Murphy","McDonald","Mackenzie","Reardon","Curzon","Keane","Byrne"];
+var ClicheEmotionArray=["Dreams","Love","Hope","Smiles","Joy","Peace","Memories","Bliss"];
+var PerturbationArray=["determined to throw her off her stride","always to be there when least expected","determined to lead her astray",
+"determined to add magic and confusion to her life","to be harbouring a tragic secret","to be both her best customer and her worst enemy",
+"to be her severest critic","like the last person she'd ever ask for help"];
+var HeroAdjectiveArray=["the enigmatic but strangely memorable","lonely","brooding","moody",
+                        "the dangerously charming","craggy but sensitive","maddening yet magical","infuriating yet intriguing"];
+var CouldSheReallyIconArray=["candycane.png","cupcake.png","book.png","vegan.png",
+                             "fruit.png","cheese.png","choc.png","baguette.png"]
+
+var permalink=findGetParameter("story");
+var firstStory=0100000000000000
+var lastStory=0177777777777777
+var storyIdOctalString=""
+
+if ($.isNumeric(permalink)){
+  var possibleStoryId=parseInt(permalink,8);
+  //Check it is valid ID
+  if (possibleStoryId>=firstStory && possibleStoryId<=lastStory) {
+    storyIdOctalString=possibleStoryId.toString(8);
+  } else {
+    storyIdOctalString=getRandomInt(firstStory,lastStory).toString(8);
+  }
+} else {
+  storyIdOctalString=getRandomInt(firstStory,lastStory).toString(8);
+}
+
+//$("#storyplot").text(storyIdOctalString);
+
+var HeroineFirstName=HeroineFirstNameArray[storyIdOctalString.charAt(1)];
+var HeroineLastName=HeroineLastNameArray[storyIdOctalString.charAt(2)];
+var HeroineJob=HeroineJobArray[storyIdOctalString.charAt(3)];
+var EvilBoyfriend=EvilBoyfriendArray[storyIdOctalString.charAt(4)];
+var EvilBoyfriendJob=EvilBoyfriendJobArray[storyIdOctalString.charAt(5)];
+var PlayingItSafe=PlayingItSafeArray[storyIdOctalString.charAt(6)];
+var WhenSuddenly=WhenSuddenlyArray[storyIdOctalString.charAt(7)];
+var CouldSheReallyOpen=CouldSheReallyOpenArray[storyIdOctalString.charAt(8)];
+var CouldSheReallyIcon=CouldSheReallyIconArray[storyIdOctalString.charAt(8)];//Same as shop
+var RealManOccupation=RealManOccupationArray[storyIdOctalString.charAt(9)];
+var HeroFirstName=HeroFirstNameArray[storyIdOctalString.charAt(10)];
+var HeroLastName=HeroLastNameArray[storyIdOctalString.charAt(11)];
+var ClicheEmotion=ClicheEmotionArray[storyIdOctalString.charAt(12)];
+var Perturbation=PerturbationArray[storyIdOctalString.charAt(13)];
+var HeroAdjective=HeroAdjectiveArray[storyIdOctalString.charAt(14)];
+
+var storyTitle=HeroineFirstName + "'s " + toTitleCase(CouldSheReallyOpen) + " of " + toTitleCase(ClicheEmotion);
+var storySynopsis=HeroineJob + " " + HeroineFirstName + " " + HeroineLastName + " has been " + PlayingItSafe + " while in an on/off relationship with " + EvilBoyfriendJob + " " + EvilBoyfriend + " when " + WhenSuddenly + " throws her world upside down. Could she really open her own " + toTitleCase(CouldSheReallyOpen) + "? And what about " + HeroAdjective +" " + RealManOccupation + " " + HeroFirstName + " " + HeroLastName + " who seems " + Perturbation+"?";
+
+$("#storytitle").text(storyTitle);
+$("#storyplot").text(storySynopsis);
+
+//var keeperLink="http://localhost:8000/?story=" + storyIdOctalString;
+var keeperLink=location.protocol + "//" + location.host + "/?story=" + storyIdOctalString;
+$("a#keepthisforever").attr("href", keeperLink);
+$("#keepthisforever").text(keeperLink);
+$("#storyimage").attr("src", "images/" + CouldSheReallyIcon);
+//$("#twitterbtn").attr("data-url",keeperLink);
+var twitterTweet=storyTitle + " - random chick-lit plot from Chick Lit Generator - "
+
+//Remove existing share button, if it exists.
+var myNode = document.getElementById('twitterbtn');
+while (myNode.firstChild) {
+    myNode.removeChild(myNode.firstChild);
+}
+
+twttr.widgets.createShareButton(
+  keeperLink,
+  document.getElementById('twitterbtn'),
+  {
+    count: 'none',
+    text: twitterTweet
+  }).then(function (el) {
+    console.log("Button created.")
+  });
+
+}
+
+
+$(document).ready(function(){
+  onPageLoad();
+});
+
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Chick Lit Generator</h1>
+          <img src="images/baguette.png" width="150px" id="storyimage">
+          <h2 id="storytitle">Story Title</h2>
+          <h3 id="storyplot">Story plot</h3>
+          <!--<p class="small">(Only 4,398,046,511,104 to read ...)</p>-->
+          <a class="btn btn-primary btn-lg" onclick="onPageLoad();" href="#" role="button">Write a New One!</a>
+          <p style="font-size:80%;">Permalink: <a href="http://www.google.co.uk/" id="keepthisforever">Permanent link</a></p>
+        </div>
+      </div>
+      <div class="row" style="margin-top:10px;">
+        <div class="col-xs-12">
+          <!--Social share buttons-->
+          <div class="fb-share-button" data-href="http://www.chicklitgenerator.com/" data-layout="button" data-mobile-iframe="true" style="vertical-align:top;zoom:1;*display:inline"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.chicklitgenerator.com%2F&amp;src=sdkpreparse">Share</a></div>
+          <span id="twitterbtn"></span>
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+          <script type="IN/Share" data-url="http://www.chicklitgenerator.com/"></script>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2">
+<p>&nbsp;</p>
+<SCRIPT charset="utf-8" type="text/javascript" src="http://ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fburnlodg-21%2F8001%2Fa872e93b-6579-4bb5-9c90-d783cf6ba69c"> </SCRIPT> <NOSCRIPT><A rel="nofollow" HREF="http://ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fburnlodg-21%2F8001%2Fa872e93b-6579-4bb5-9c90-d783cf6ba69c&Operation=NoScript">Amazon.co.uk Widgets</A></NOSCRIPT>
+    </div>
+  <div>
+</div>
+
+</body>
+</html>

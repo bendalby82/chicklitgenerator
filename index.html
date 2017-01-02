@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -160,11 +160,11 @@ $(document).ready(function(){
           <h3 id="storyplot">Story plot</h3>
           <!--<p class="small">(Only 4,398,046,511,104 to read ...)</p>-->
           <a class="btn btn-primary btn-lg" onclick="onPageLoad();" href="#" role="button">Write a New One!</a>
-          <p style="font-size:80%;">Permalink: <a href="http://www.google.co.uk/" id="keepthisforever">Permanent link</a></p>
+          <p id="permalink">Permalink: <a href="http://www.google.co.uk/" id="keepthisforever">Permanent link</a></p>
         </div>
       </div>
-      <div class="row" style="margin-top:10px;">
-        <div class="col-xs-12">
+      <div class="row"><!--style="margin-top:10px;"-->
+        <div class="col-xs-12" id="socialshare">
           <!--Social share buttons-->
           <div class="fb-share-button" data-href="http://www.chicklitgenerator.com/" data-layout="button" data-mobile-iframe="true" style="vertical-align:top;zoom:1;*display:inline"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.chicklitgenerator.com%2F&amp;src=sdkpreparse">Share</a></div>
           <span id="twitterbtn"></span>

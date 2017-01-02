@@ -18,3 +18,8 @@ h2 {
 .top15 { margin-top:15px; }
 .top17 { margin-top:17px; }
 .top30 { margin-top:30px; }
+
+#permalink {
+  margin-top:15px;
+  font-size:80%;
+}

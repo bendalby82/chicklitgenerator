@@ -2,7 +2,7 @@ name: 🚀 Deploy Website
 on: 
   push:
     paths:
-      - public/**
+      - **
 jobs:
   web-deploy:
     name: 🎉 Deploy
